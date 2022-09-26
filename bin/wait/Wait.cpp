@@ -5,7 +5,6 @@
 #include <errno.h>
 #include <unistd.h>
 #include <ProcessClient.h>
-#include <Process.h>
 #include "Wait.h"
 
 Wait::Wait(int argc, char **argv)
@@ -21,16 +20,18 @@ Wait::~Wait()
 
 Wait::Result Wait::exec()
 {
-    int pid = 0;
-    pid = atoi(arguments().get("PID"));
+    //int pid = 0;
+    ProcessID pid = atoi(arguments().get("PID"));
 
     if (pid <= 0 || pid >= ProcessClient::MaximumProcesses)
     {
-        throw std::invalid_argument("Invalid PID");
+        ERROR("Invalid PID: " << arguments().get("PID");
+        return InvalidArgument;
+        //throw std::invalid_argument("Invalid PID");
     }
     
     // Run wait on the process ID
-    if (Waitpid(pid, 0, 0) == -1) {
+    if (waitpid(pid, 0, 0) == -1) {
         ERROR("Failed wait: " << strerror(errno));
         return IOError;
     }
