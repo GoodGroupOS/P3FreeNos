@@ -40,4 +40,4 @@ class Wait : public POSIXApplication
  * @}
  */
 
-#endif
+#endif /* __BIN_WAIT_WAIT_H */
