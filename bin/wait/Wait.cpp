@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <ProcessClient.h>
 #include <Process.h>
+#include "Wait.h"
 
 Wait::Wait(int argc, char **argv)
     : POSIXApplication(argc, argv)
