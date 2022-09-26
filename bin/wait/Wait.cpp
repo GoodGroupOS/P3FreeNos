@@ -25,9 +25,9 @@ Wait::Result Wait::exec()
 
     if (pid <= 0 || pid >= ProcessClient::MaximumProcesses)
     {
-        ERROR("Invalid PID: " << arguments().get("PID");
+        //ERROR("Invalid PID: " << arguments().get("PID");
+        throw std::invalid_argument("Invalid PID");
         return InvalidArgument;
-        //throw std::invalid_argument("Invalid PID");
     }
     
     // Run wait on the process ID
