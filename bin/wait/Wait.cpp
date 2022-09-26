@@ -5,6 +5,8 @@
 #include <errno.h>
 #include <unistd.h>
 #include <ProcessClient.h>
+#include <Process.h>
+#include <sys/wait.h>
 #include "Wait.h"
 
 Wait::Wait(int argc, char **argv)
@@ -25,8 +27,8 @@ Wait::Result Wait::exec()
 
     if (pid <= 0 || pid >= ProcessClient::MaximumProcesses)
     {
-        //ERROR("Invalid PID: " << arguments().get("PID");
-        throw std::invalid_argument("Invalid PID");
+        ERROR("Invalid PID: " << arguments().get("PID"));
+        //throw std::invalid_argument("Invalid PID");
         return InvalidArgument;
     }
     
