@@ -75,7 +75,7 @@ class Process
       Minimum = 1,
       Default = 3,
       Maximum = 5
-    }
+    };
 
   public:
 
