@@ -71,6 +71,12 @@ class Process
         Stopped
     };
 
+    enum PriorityLevels {
+      Minimum = 1,
+      Default = 3,
+      Maximum = 5
+    }
+
   public:
 
     /**
@@ -87,6 +93,8 @@ class Process
      * Destructor function.
      */
     virtual ~Process();
+
+    PriorityLevels getPriority();
 
     /**
      * Retrieve our ID number.
