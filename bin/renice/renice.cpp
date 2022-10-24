@@ -28,7 +28,7 @@ renice::Result renice::exec(){
         return InvalidArgument;
     }
 
-    if (prio <= 0 || prio >= 5){
+    if (prio <= 0 || prio > 5){
         ERROR("Invalid priority: " << prio);
         return InvalidArgument;
     }
