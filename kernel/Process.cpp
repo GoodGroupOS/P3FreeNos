@@ -113,8 +113,8 @@ void Process::setParent(ProcessID id)
 }
 
 bool Process::setPriority(int prio){
-    m_priority = Minimum;
-   // m_priority = (PriorityLevels)prio;
+    //m_priority = Minimum;
+    m_priority = (PriorityLevels)prio;
     return true;
 }
 
