@@ -73,7 +73,9 @@ class Process
 
     enum PriorityLevels {
       Minimum = 1,
+      Low     = 2,
       Default = 3,
+      High    = 4,
       Maximum = 5
     };
 
@@ -248,6 +250,11 @@ class Process
      * Set parent process ID.
      */
     void setParent(ProcessID id);
+
+    /**
+     * Set priority level
+     */
+    bool setPriority(int prio);
 
   protected:
 

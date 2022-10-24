@@ -227,6 +227,11 @@ ProcessManager::Result ProcessManager::wait(Process *proc)
     return dequeueProcess(m_current);
 }
 
+ProcessManager::Result ProcessManager::renice(Process *proc, int prio){
+    proc->setPriority(prio);
+    return Success;
+}
+
 ProcessManager::Result ProcessManager::stop(Process *proc)
 {
     const Process::State state = proc->getState();

@@ -115,6 +115,16 @@ class ProcessManager
     Result wait(Process *proc);
 
     /**
+     * Change the priority of the proccess
+     * 
+     * @param proc Process pointer
+     * @param prio Target priority
+     * 
+     * @return Result code
+     */
+    Result renice(Process *proc, int prio);
+
+    /**
      * Remove given Process from the Scheduler
      *
      * @param proc Process pointer
