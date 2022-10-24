@@ -121,6 +121,8 @@ class ProcessClient
      */
     ProcessID findProcess(const String program) const;
 
+    void setPriority(ProcessID pid, int prio);
+
   private:
 
     /** Our own process identifier */

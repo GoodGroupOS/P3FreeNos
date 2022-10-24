@@ -159,6 +159,11 @@ class Process
      */
     bool operator == (Process *proc);
 
+    /**
+     * Set priority level
+     */
+    bool setPriority(int prio);
+
   protected:
 
     /**
@@ -254,7 +259,7 @@ class Process
     /**
      * Set priority level
      */
-    bool setPriority(int prio);
+    //bool setPriority(int prio);
 
   protected:
 

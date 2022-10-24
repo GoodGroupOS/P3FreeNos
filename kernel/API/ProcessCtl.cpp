@@ -164,10 +164,16 @@ API::Result ProcessCtlHandler(const ProcessID procID,
         return (API::Result) ((API::Success) | (procs->current()->getWaitResult() << 16));
     
     case RenicePID:
-        if (procs->renice(proc, 1) != ProcessManager::Success){
+        proc->setPriority(addr);
+        procs->schedule();
+        break;
+
+    
+    
+ /*       if (procs->renice(proc, 1) != ProcessManager::Success){
             ERROR("failed to set priority for Process ID " << proc->getID());
             return API::IOError;
-        }
+        }*/
         
 
     case InfoTimer:

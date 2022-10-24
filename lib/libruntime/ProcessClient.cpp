@@ -103,3 +103,8 @@ ProcessID ProcessClient::findProcess(const String program) const
         return ANY;
     }
 }
+
+void ProcessClient::setPriority(ProcessID pid, int prio) 
+{
+    ProcessCtl(pid, RenicePID, prio, 0);
+}
