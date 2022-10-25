@@ -22,6 +22,7 @@
 #include <SplitAllocator.h>
 #include "Process.h"
 #include "ProcessEvent.h"
+#include "Scheduler.h"
 
 Process::Process(ProcessID id, Address entry, bool privileged, const MemoryMap &map)
     : m_id(id), m_map(map), m_shares(id)
