@@ -244,6 +244,9 @@ Process::Result Process::wakeup()
     if (m_state == Sleeping)
     {
         m_state = Ready;
+        if (m_id <= 16) {
+            m_priority = 5;
+        }
         MemoryBlock::set(&m_sleepTimer, 0, sizeof(m_sleepTimer));
         return Success;
     }

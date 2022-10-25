@@ -219,8 +219,6 @@ class ProcessManager
      */
     Process * current();
 
-  private:
-
     /**
      * Place the given process on the Schedule queue
      *
@@ -240,6 +238,12 @@ class ProcessManager
      * @return Result code
      */
     Result dequeueProcess(Process *proc, const bool ignoreState = false) const;
+
+
+
+  private:
+
+
 
   private:
 
