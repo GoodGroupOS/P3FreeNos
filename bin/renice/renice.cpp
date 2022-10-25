@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <Process.h>
 #include "renice.h"
+#include "Scheduler.h"
 
 int prio;
 ProcessID pid;
